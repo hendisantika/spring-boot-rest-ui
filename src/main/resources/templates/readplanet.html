@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <a ng-click="listView()">All Planets</a>
+            <h2>Planet View</h2>
+            <form ng-submit="processUpdateForm()">
+                <div class="form-group">
+                    <input type="hidden" name="id" th:value="${planet.getId()}" ng-model="planetData.id" init-from-form="" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" th:value="${planet.getName()}" ng-model="planetData.name" init-from-form=""/>
+                </div>
+                <div class="form-group">
+                    <label for="placeFromSun">Place From Sun</label>
+                    <input type="text" class="form-control" name="placeFromSun" th:value="${planet.getPlaceFromSun()}" ng-model="planetData.placeFromSun" init-from-form=""/>
+                </div>
+                <div class="form-group">
+                    <label for="mass">Earth Masses</label>
+                    <input type="text" class="form-control" name="mass" th:value="${planet.getMass()}" ng-model="planetData.mass" init-from-form=""/>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

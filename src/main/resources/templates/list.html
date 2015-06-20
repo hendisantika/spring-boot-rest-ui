@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Planets</h2>
+            <a ng-click="addPlanet()">Add Planet</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Place From Sun</th>
+                        <th>Earth Mass Equivalent</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="planet : ${planets}">
+                        <td th:text="${planet.getName()}" />
+                        <td th:text="${planet.getPlaceFromSun()}" />
+                        <td th:text="${planet.getMass()}" />
+                        <td>
+                            <a th:attr="ng-click='viewPlanet(\''+${planet.id} + '\')'">View</a>
+                        </td>
+                        <td>
+                            <a th:attr="ng-click='deletePlanet(\''+${planet.id} + '\')'">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
